@@ -1,0 +1,23 @@
+.container {
+    margin: 0 auto;
+    padding: 24px;
+    width: 70%;
+}
+.container button {
+    font-size: 1.2em;
+}
+table {
+    font-size: 1em;
+    margin-top: 12px;
+}
+table th, 
+table td {
+    border: 1px solid #CCCCCC;
+    padding: 16px;
+}
+
+@media only screen and (max-width: 750px) {
+    .container {
+        width: 95%;
+    }
+  }

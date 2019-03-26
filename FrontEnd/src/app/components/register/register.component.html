@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+          <form #registerForm="ngForm" (ngSubmit)="addRegister(registerForm)">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="registerService.selectAllRegister._id">
+            <div class="row">
+              <p>Ingresa Nombre:
+                <input type="text" name="name" #name="ngModel" [(ngModel)]="registerService.selectAllRegister.name"
+                  placeholder="Ingresa nombre"></p>
+              <p>Ingresa Ocupación:
+                <input type="text" name="ocupation" #ocupation="ngModel"
+                  [(ngModel)]="registerService.selectAllRegister.ocupation" placeholder="Ingresa ocupacion"></p>
+              <p>Ingresa número de contacto:
+                <input type="text" name="telephone" #telephone="ngModel"
+                  [(ngModel)]="registerService.selectAllRegister.telephone" placeholder="Ingresa telefono">
+              </p>
+              <p>Ingresa área en la que trabaja:
+                <input type="text" name="dependencie" #dependencie="ngModel"
+                  [(ngModel)]="registerService.selectAllRegister.dependencie" placeholder="Ingresa área">
+              </p>
+              <p>Ingresa Edad:
+                <input type="text" name="age" #age="ngModel" [(ngModel)]="registerService.selectAllRegister.age"
+                  placeholder="Ingresa edad">
+              </p>
+              <p>Ingresa Email:
+                <input type="text" name="email" #email="ngModel" [(ngModel)]="registerService.selectAllRegister.email"
+                  placeholder="Ingresa correo">
+              </p>
+                  <button mat-raised-button color="primary">Guardar</button>
+                  <button mat-raised-button color="primary" (click)="cleanForm(registerForm)">Limpiar</button>
+            </div>
+          </form>
+
+      <table>
+        <thead>
+          <th>Nombre</th>
+          <th>Ocupación</th>
+          <th>Telefono</th>
+          <th>Área</th>
+          <th>Años</th>
+          <th>Correo</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let register of registerService.registers">
+            <td>{{ register.name}}</td>
+            <td>{{ register.ocupation}}</td>
+            <td>{{ register.telephone}}</td>
+            <td>{{ register.dependencie}}</td>
+            <td>{{ register.age}}</td>
+            <td>{{ register.email}}</td>
+            <td><button (click)="editRegister(register)">Editar</button>
+                <button (click)="deleteRegister(register._id)">Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>

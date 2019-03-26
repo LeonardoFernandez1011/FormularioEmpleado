@@ -1,0 +1,14 @@
+footer {
+    background: rgb(31, 50, 64) ;
+    bottom: 0;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+}
+
+@media only screen and (max-width: 750px) {
+    footer {
+       height: 100px;
+       position: relative;
+    }
+  }
